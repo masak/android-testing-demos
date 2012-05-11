@@ -6,33 +6,60 @@ public class RomanConverter {
 	}
 
 	private String hundreds(int number) {
-		if (number == 9)
-			return "CM";
-		if (number >= 5)
-			return "D" + times(number - 5, "C");
-		if (number == 4)
+		switch (number) {
+		case 1:
+		case 2:
+		case 3:
+			return times(number, "C");
+		case 4:
 			return "CD";
-		return times(number, "C");
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+			return "D" + times(number - 5, "C");
+		case 9:
+			return "CM";
+		}
+		return "";
 	}
 
 	private String tens(int number) {
-		if (number == 9)
-			return "XC";
-		if (number >= 5)
-			return "L" + times(number - 5, "X");
-		if (number == 4)
+		switch (number) {
+		case 1:
+		case 2:
+		case 3:
+			return times(number, "X");
+		case 4:
 			return "XL";
-		return times(number, "X");
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+			return "L" + times(number - 5, "X");
+		case 9:
+			return "XC";
+		}
+		return "";
 	}
 
 	private String units(int number) {
-		if (number == 9)
-			return "IX";
-		if (number >= 5)
-			return "V" + times(number - 5, "I");
-		if (number == 4)
+		switch (number) {
+		case 1:
+		case 2:
+		case 3:
+			return times(number, "I");
+		case 4:
 			return "IV";
-		return times(number, "I");
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+			return "V" + times(number - 5, "I");
+		case 9:
+			return "IX";
+		}
+		return "";
 	}
 
 	private String times(int number, String string) {
