@@ -2,8 +2,20 @@ package se.edument.roman;
 
 public class RomanConverter {
 	public String toRoman(int number) {
-		if (number == 10)
-			return "X";
+		return tens(number / 10) + units(number % 10);
+	}
+
+	private String tens(int number) {
+		if (number == 9)
+			return "XC";
+		if (number >= 5)
+			return "L" + times(number - 5, "X");
+		if (number == 4)
+			return "XL";
+		return times(number, "X");
+	}
+
+	private String units(int number) {
 		if (number == 9)
 			return "IX";
 		if (number >= 5)
