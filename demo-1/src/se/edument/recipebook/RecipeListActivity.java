@@ -1,6 +1,7 @@
 package se.edument.recipebook;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,7 +9,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class RecipeListActivity extends ListActivity {
     @Override
@@ -24,7 +24,9 @@ public class RecipeListActivity extends ListActivity {
     		  public void onItemClick(AdapterView<?> parent, View view,
     				  int position, long id) {
 
-    			  Toast.makeText(RecipeListActivity.this, ((TextView)view).getText(), 3);
+    			  Intent intent = new Intent(RecipeListActivity.this, RecipeActivity.class);
+    			  intent.putExtra("recipe_title", ((TextView)view).getText());
+    			  startActivity(intent);
     		  }
     	  });
     }
