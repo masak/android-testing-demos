@@ -45,4 +45,12 @@ public class RomanConverterTest extends TestCase {
 	public void testConvert53() {
 		Assert.assertEquals("LIII", converter.toRoman(53));
 	}
+
+	public void testConvert100() {
+		Assert.assertEquals("C", converter.toRoman(100));
+	}
+
+	public void testConvert639() {
+		Assert.assertEquals("DCXXXIX", converter.toRoman(639));
+	}
 }

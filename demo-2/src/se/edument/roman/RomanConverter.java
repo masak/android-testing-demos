@@ -2,7 +2,17 @@ package se.edument.roman;
 
 public class RomanConverter {
 	public String toRoman(int number) {
-		return tens(number / 10) + units(number % 10);
+		return hundreds(number / 100) + tens((number / 10) % 10) + units(number % 10);
+	}
+
+	private String hundreds(int number) {
+		if (number == 9)
+			return "CM";
+		if (number >= 5)
+			return "D" + times(number - 5, "C");
+		if (number == 4)
+			return "CD";
+		return times(number, "C");
 	}
 
 	private String tens(int number) {
