@@ -2,8 +2,13 @@ package se.edument.recipebook;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class RecipeListActivity extends ListActivity {
     @Override
@@ -14,6 +19,14 @@ public class RecipeListActivity extends ListActivity {
 
     	  ListView lv = getListView();
     	  lv.setTextFilterEnabled(true);
+    	  
+    	  lv.setOnItemClickListener(new OnItemClickListener() {
+    		  public void onItemClick(AdapterView<?> parent, View view,
+    				  int position, long id) {
+
+    			  Toast.makeText(RecipeListActivity.this, ((TextView)view).getText(), 3);
+    		  }
+    	  });
     }
     
     static final String[] RECIPES = new String[] {
