@@ -33,4 +33,12 @@ public class RomanConverterTest extends TestCase {
 	public void testConvert6() {
 		Assert.assertEquals("VI", converter.toRoman(6));
 	}
+
+	public void testConvert9() {
+		Assert.assertEquals("IX", converter.toRoman(9));
+	}
+
+	public void testConvert10() {
+		Assert.assertEquals("X", converter.toRoman(10));
+	}
 }
