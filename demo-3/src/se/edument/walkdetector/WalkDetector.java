@@ -3,9 +3,9 @@ package se.edument.walkdetector;
 public class WalkDetector {
 	private Location startLocation;
 	private boolean isWalking = false;
-	private RealGPS gps;
+	private GPS gps;
 
-	public WalkDetector(RealGPS gps) {
+	public WalkDetector(GPS gps) {
 		this.gps = gps;
 	}
 	
