@@ -2,6 +2,10 @@ package se.edument.roman;
 
 public class RomanConverter {
 	public String toRoman(int number) {
+		if (number >= 5)
+			return "V" + times(number - 5, "I");
+		if (number == 4)
+			return "IV";
 		return times(number, "I");
 	}
 
